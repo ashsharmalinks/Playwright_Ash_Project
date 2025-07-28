@@ -1,0 +1,118 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "login;successful-login",
+        "keyword": "Scenario",
+        "line": 3,
+        "name": "Successful login",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 223394600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "I open the login page",
+            "match": {
+              "location": "E2E\\step-definitions\\login.step.ts:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 971394500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 5,
+            "name": "I have clicked the sign-in button",
+            "match": {
+              "location": "E2E\\step-definitions\\login.step.ts:13"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 351092800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I enter valid credentials",
+            "match": {
+              "location": "E2E\\step-definitions\\login.step.ts:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1256564100
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "I should be redirected to the account summary page",
+            "match": {
+              "location": "E2E\\step-definitions\\login.step.ts:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3919800
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "the account summary should have Cash Accounts with two savings accounts",
+            "match": {
+              "location": "E2E\\step-definitions\\accountSummary.step.ts:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 49212700
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "all naviagtion links should be working on account summary page",
+            "match": {
+              "location": "E2E\\step-definitions\\accountSummary.step.ts:23"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 11161078400
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 23675300
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "login",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Login",
+    "tags": [],
+    "uri": "E2E\\features\\login.feature"
+  }
+]

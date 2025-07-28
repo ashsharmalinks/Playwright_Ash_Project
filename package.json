@@ -1,0 +1,35 @@
+{
+  "name": "playwright_ash_project",
+  "version": "1.0.0",
+  "description": "Ash Project",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test:headed": "cross-env PLAYWRIGHT_HEADLESS=false npx cucumber-js",
+    "test:headless": "cross-env PLAYWRIGHT_HEADLESS=true npx cucumber-js",
+    "test:json": "cucumber-js --format json:reports/cucumber-report.json",
+    "report:html": "ts-node report-generator.ts"
+
+  },
+  "author": "Ash Sharma",
+  "license": "ISC",
+  "dependencies": {
+    "pino": "^9.7.0",
+    "pino-pretty": "^13.0.0",
+    "prettier": "^3.6.2"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.1.0",
+    "@cucumber/messages": "^28.1.0",
+    "@cucumber/pretty-formatter": "^2.0.1",
+    "@playwright/test": "^1.54.1",
+    "@types/node": "^24.1.0",
+    "allure-commandline": "^2.34.1",
+    "allure-cucumberjs": "^3.3.2",
+    "allure-js-commons": "^3.3.2",
+    "cross-env": "^10.0.0",
+    "cucumber-html-reporter": "^7.2.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
