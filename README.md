@@ -87,3 +87,87 @@ Feature: Login
   "test:json": "cucumber-js --require-module ts-node/register --require E2E/**/*.ts --format json:reports/cucumber-report.json",
   "report:html": "ts-node report-generator.ts"
 }
+
+
+
+---
+
+## 📊 Allure Reporting Setup
+
+This project uses [Allure Report](https://docs.qameta.io/allure/) to generate rich, interactive test reports for CucumberJS-based tests.
+
+### 🔧 Prerequisites
+
+Make sure the following dependencies are installed (already included in `package.json`):
+
+```bash
+npm install
+```
+
+> This installs `cucumber-js`, `allure-cucumberjs`, and `allure-commandline` locally.
+
+---
+
+### 🚀 How to Run Tests and Generate Allure Report
+
+#### 1. Run Tests and Generate Results
+
+```bash
+npm run allure:test
+```
+
+This executes the Cucumber tests and outputs raw Allure results to the `results/` folder.
+
+#### 2. Generate HTML Report
+
+```bash
+npm run allure:report
+```
+
+This converts the raw result files in `results/` into a browsable HTML report in the `allure-report/` folder.
+
+#### 3. Open the Report in Your Browser
+
+```bash
+npm run allure:open
+```
+
+This will open the Allure report in your default web browser using a local web server.
+
+---
+
+### 💡 Run Everything in One Command
+
+For convenience, you can run all steps (test + generate + open) with a single command:
+
+```bash
+npm run allure:run
+```
+
+---
+
+### 📁 Report Output Structure
+
+After running the tests and generating the report, you'll have the following:
+
+* `results/`: Raw `.json` test result files
+* `allure-report/`: Final HTML report files (can be committed or shared)
+* Automatically opens in your browser
+
+---
+
+### 🧪 Custom Tags for Reporting (Optional)
+
+To enhance your reports, you can annotate scenarios with tags in `.feature` files:
+
+```gherkin
+@epic:Login @severity:critical @jira:QA-123
+Scenario: User logs in successfully
+  Given I navigate to the login page
+  ...
+```
+
+These will be reflected as labels, links, and categories in the Allure report.
+
+---
+
