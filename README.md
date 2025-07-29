@@ -206,3 +206,46 @@ Scenario: Submit valid feedback
   When I enter valid feedback and click submit
   Then I should see a confirmation message
 ```
+### 🔐 Handling Credentials (Local vs CI)
+
+This project uses a secure and flexible approach to manage login credentials for UI/API testing:
+
+#### ✅ **Local Development**
+
+When running tests locally, credentials are loaded from a file:
+
+```
+tests/fixtures/credentials.local.json
+```
+
+Example:
+
+```json
+{
+  "email": "localuser@example.com",
+  "password": "localpassword123"
+}
+```
+
+> ⚠️ This file is excluded from version control via `.gitignore`.
+
+---
+
+#### ✅ **CI Environment**
+
+In CI (e.g. GitHub Actions, Azure DevOps), credentials are pulled from **environment variables**:
+
+| Variable Name    | Description            |
+| ---------------- | ---------------------- |
+| `LOGIN_EMAIL`    | User email or username |
+| `LOGIN_PASSWORD` | User password          |
+
+CI pipelines should define these securely using the tool’s secret management.
+
+Example (GitHub Actions):
+
+```yaml
+env:
+  LOGIN_EMAIL: ${{ secrets.LOGIN_EMAIL }}
+  LOGIN_PASSWORD: ${{ secrets.LOGIN_PASSWORD }}
+```
