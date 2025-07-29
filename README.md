@@ -249,3 +249,31 @@ env:
   LOGIN_EMAIL: ${{ secrets.LOGIN_EMAIL }}
   LOGIN_PASSWORD: ${{ secrets.LOGIN_PASSWORD }}
 ```
+
+### 🧩 AbstractPage – Reusable Base Class
+
+The `AbstractPage` class provides a reusable foundation for all page objects, encapsulating common actions with built-in logging and error handling.
+
+**Key Methods:**
+
+* `waitForElement(selector, timeout?)`
+* `clickElement(selector)`
+* `getElementText(selector)`
+* `wait(timeout)`
+
+**Usage Example:**
+
+```ts
+export class LoginPage extends AbstractPage {
+  async login(email: string, password: string) {
+    await this.waitForElement('#email');
+    await this.page.fill('#email', email);
+    await this.page.fill('#password', password);
+    await this.clickElement('text=Login');
+  }
+}
+```
+
+✅ Improves code reuse
+✅ Standardized logging
+✅ Cleaner, more maintainable tests
