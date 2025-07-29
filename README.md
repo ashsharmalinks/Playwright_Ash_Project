@@ -171,3 +171,17 @@ These will be reflected as labels, links, and categories in the Allure report.
 
 ---
 
+Run Tagged Tests in Headed Mode
+To execute only the Cucumber scenarios tagged with @feedbackForm in headed mode (i.e., with the browser UI visible), use the following command:
+npx cross-env PLAYWRIGHT_HEADLESS=false cucumber-js --tags "@feedbackForm"
+
+Command Breakdown:
+npx: Runs the local project binaries without needing a global install.
+
+cross-env: Ensures environment variables work across platforms (Windows, macOS, Linux).
+
+PLAYWRIGHT_HEADLESS=false: Tells Playwright to launch the browser in headed mode (browser window visible). When set to true, it runs in headless mode (no UI).
+
+cucumber-js: Executes your BDD tests written in Gherkin feature files using Cucumber.js.
+
+--tags "@feedbackForm": Filters and runs only the scenarios or features marked with the @feedbackForm tag.
