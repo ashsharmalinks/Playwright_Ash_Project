@@ -25,10 +25,7 @@ Then('all naviagtion links should be working on account summary page', async fun
   if (!this.accountSummaryPage) {
     this.accountSummaryPage = new AccountSummaryPage(this.page);
   }
-//   await this.page.waitForTimeout(10000);
-
-
-  // Delegate the verification logic to the page object method
+  // Verify all navigation links are working on the AccountSummaryPage
   await this.accountSummaryPage.verifyAllNavigationLinks();
 });
 

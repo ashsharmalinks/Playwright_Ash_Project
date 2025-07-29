@@ -3,6 +3,7 @@ import { setWorldConstructor, World, IWorldOptions } from '@cucumber/cucumber';
 import { Page, BrowserContext } from 'playwright';
 import { LoginPage, } from '../pages/LoginPage';
 import { AccountSummaryPage } from "../pages/AccountSummaryPage";
+import { FeedbackPage } from "../pages/FeedbackPage"; // ✅ Adjust path if needed
 
 
 export class CustomWorld extends World {
@@ -10,6 +11,7 @@ export class CustomWorld extends World {
   context!: BrowserContext;
   loginPage?: LoginPage;
   accountSummaryPage?: AccountSummaryPage;
+  feedbackPage?: FeedbackPage; // Add feedbackPage property
 
   constructor(options: IWorldOptions) {
     super(options);

@@ -8,5 +8,6 @@
   "cucumberautocomplete.onTypeFormat": true,
   "editor.quickSuggestions": {
     "strings": true
-  }
+  },
+  "DockerRun.DisableDockerrc": true
 }
