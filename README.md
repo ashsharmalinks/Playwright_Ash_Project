@@ -171,17 +171,38 @@ These will be reflected as labels, links, and categories in the Allure report.
 
 ---
 
-Run Tagged Tests in Headed Mode
-To execute only the Cucumber scenarios tagged with @feedbackForm in headed mode (i.e., with the browser UI visible), use the following command:
+### 🧪 Run Tagged Tests in Headed Mode
+
+To run only specific scenarios (e.g. `@feedbackForm`) in **headed mode** using Playwright with Cucumber.js, use the following command:
+
+```bash
 npx cross-env PLAYWRIGHT_HEADLESS=false cucumber-js --tags "@feedbackForm"
+```
 
-Command Breakdown:
-npx: Runs the local project binaries without needing a global install.
+#### 🔍 Command Breakdown:
 
-cross-env: Ensures environment variables work across platforms (Windows, macOS, Linux).
+| 🔧 Part                     | 📝 Description                                                              |
+| --------------------------- | --------------------------------------------------------------------------- |
+| `npx`                       | Runs binaries from your local `node_modules` without a global install.      |
+| `cross-env`                 | Ensures `PLAYWRIGHT_HEADLESS` works cross-platform (Windows, macOS, Linux). |
+| `PLAYWRIGHT_HEADLESS=false` | Runs the test in **headed mode** (i.e., browser UI will be visible).        |
+| `cucumber-js`               | Runs your feature files via Cucumber.js.                                    |
+| `--tags "@feedbackForm"`    | Runs only the tests/scenarios tagged with `@feedbackForm`.                  |
 
-PLAYWRIGHT_HEADLESS=false: Tells Playwright to launch the browser in headed mode (browser window visible). When set to true, it runs in headless mode (no UI).
+#### ✅ Use Case:
 
-cucumber-js: Executes your BDD tests written in Gherkin feature files using Cucumber.js.
+* Visual debugging in the browser
+* Testing only a specific feature (e.g. Feedback Form)
+* Ensuring end-to-end flows work with UI
 
---tags "@feedbackForm": Filters and runs only the scenarios or features marked with the @feedbackForm tag.
+---
+
+> 💡 **Tip:** Tag your scenarios in `.feature` files like this:
+
+```gherkin
+@feedbackForm
+Scenario: Submit valid feedback
+  Given I navigate to the feedback form
+  When I enter valid feedback and click submit
+  Then I should see a confirmation message
+```
