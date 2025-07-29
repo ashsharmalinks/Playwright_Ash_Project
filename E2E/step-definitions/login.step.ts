@@ -2,6 +2,8 @@ import { Given, When, Then } from '@cucumber/cucumber';
 import { LoginPage } from '../pages/LoginPage';
 import { CustomWorld } from '../support/custom-world';
 import { logger } from '../utils/logger'; // ✅ import your structured logger
+import { getCredentials } from '../utils/getCredentials';
+
 
 Given('I open the login page', async function () {
   const loginPage = new LoginPage(this.page);
@@ -16,7 +18,8 @@ When('I have clicked the sign-in button', async function (this: CustomWorld) {
 });
 
 When('I enter valid credentials', async function (this: CustomWorld) {
-  await this.loginPage?.enterCredentials('username', 'password');
+  const { username, password } = getCredentials();
+  await this.loginPage?.enterCredentials(username, password);
   logger.info('✅ Entered valid credentials');
   await this.loginPage?.submit();
   logger.info('📤 Submitted login form');

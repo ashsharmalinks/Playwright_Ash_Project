@@ -5,3 +5,5 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+# Prevent committing secrets
+E2E/fixture/credentials.local.json
