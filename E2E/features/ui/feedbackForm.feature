@@ -2,7 +2,7 @@ Feature: Validation of feedback form
   As a user 
   I want to validate the form
 
-  @feedbackForm
+  @feedbackForm @ui
   Scenario: Validation of feedback form
     Given I open the login page
     And I have clicked the feedback form button

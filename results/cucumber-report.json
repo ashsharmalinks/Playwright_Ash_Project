@@ -1,101 +1,5 @@
 [
   {
-    "description": "",
-    "elements": [
-      {
-        "description": "",
-        "id": "get-user-list-from-reqres-api;successfully-retrieve-user-list-from-page-2",
-        "keyword": "Scenario",
-        "line": 4,
-        "name": "Successfully retrieve user list from page 2",
-        "steps": [
-          {
-            "keyword": "Before",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 591300
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 5,
-            "name": "the Reqres API is available",
-            "match": {
-              "location": "E2E\\step-definitions\\get-users.steps.ts:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 5632099
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "When ",
-            "line": 6,
-            "name": "I send a GET request to \"api/users?page=10\"",
-            "match": {
-              "location": "E2E\\step-definitions\\get-users.steps.ts:13"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 171269699
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Then ",
-            "line": 7,
-            "name": "the response status should be 200",
-            "match": {
-              "location": "E2E\\step-definitions\\get-users.steps.ts:17"
-            },
-            "result": {
-              "status": "failed",
-              "duration": 5966400,
-              "error_message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m\n    at Proxy.<anonymous> (C:\\Users\\asusv\\OneDrive\\Desktop\\Playwright_Ash_Project\\node_modules\\playwright\\lib\\matchers\\expect.js:221:24)\n    at CustomWorld.<anonymous> (C:\\Users\\asusv\\OneDrive\\Desktop\\Playwright_Ash_Project\\E2E\\step-definitions\\get-users.steps.ts:18:29)"
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 8,
-            "name": "the response should contain a list of users",
-            "match": {
-              "location": "E2E\\step-definitions\\get-users.steps.ts:21"
-            },
-            "result": {
-              "status": "skipped",
-              "duration": 0
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1390699
-            }
-          }
-        ],
-        "tags": [
-          {
-            "name": "@api",
-            "line": 3
-          }
-        ],
-        "type": "scenario"
-      }
-    ],
-    "id": "get-user-list-from-reqres-api",
-    "line": 1,
-    "keyword": "Feature",
-    "name": "Get user list from Reqres API",
-    "tags": [],
-    "uri": "E2E\\features\\api\\get-users.feature"
-  },
-  {
     "description": "  As a user \n  I want to validate the form",
     "elements": [
       {
@@ -110,7 +14,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 86745199
+              "duration": 134688900
             }
           },
           {
@@ -123,7 +27,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 968622200
+              "duration": 3651198800
             }
           },
           {
@@ -136,7 +40,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5609018900
+              "duration": 5543010400
             }
           },
           {
@@ -149,7 +53,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 879816899
+              "duration": 840317000
             }
           },
           {
@@ -162,7 +66,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 40008199
+              "duration": 67072499
             }
           },
           {
@@ -170,17 +74,13 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 14882700
+              "duration": 28179700
             }
           }
         ],
         "tags": [
           {
             "name": "@feedbackForm",
-            "line": 5
-          },
-          {
-            "name": "@ui",
             "line": 5
           }
         ],
@@ -192,7 +92,7 @@
     "keyword": "Feature",
     "name": "Validation of feedback form",
     "tags": [],
-    "uri": "E2E\\features\\ui\\feedbackForm.feature"
+    "uri": "E2E\\features\\feedbackForm.feature"
   },
   {
     "description": "  As a user \n  I want to verify the login functionality and account summary\n  So that I can access my account and perform transactions",
@@ -201,7 +101,7 @@
         "description": "",
         "id": "login-and-account-summary-verification;successful-login-and-account-summary-verification",
         "keyword": "Scenario",
-        "line": 7,
+        "line": 6,
         "name": "Successful login and account summary verification",
         "steps": [
           {
@@ -209,111 +109,111 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 69734899
+              "duration": 91603100
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
-            "line": 8,
+            "line": 7,
             "name": "I open the login page",
             "match": {
               "location": "E2E\\step-definitions\\login.step.ts:8"
             },
             "result": {
               "status": "passed",
-              "duration": 1032248400
+              "duration": 956451699
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 9,
+            "line": 8,
             "name": "I have clicked the sign-in button",
             "match": {
               "location": "E2E\\step-definitions\\login.step.ts:15"
             },
             "result": {
               "status": "passed",
-              "duration": 251555000
+              "duration": 269417699
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 10,
+            "line": 9,
             "name": "I enter valid credentials",
             "match": {
               "location": "E2E\\step-definitions\\login.step.ts:20"
             },
             "result": {
               "status": "passed",
-              "duration": 1246400899
+              "duration": 1242933199
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 11,
+            "line": 10,
             "name": "I should be redirected to the account summary page",
             "match": {
               "location": "E2E\\step-definitions\\login.step.ts:28"
             },
             "result": {
               "status": "passed",
-              "duration": 2635999
+              "duration": 2685199
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 12,
+            "line": 11,
             "name": "the account summary should have Cash Accounts with two savings accounts",
             "match": {
               "location": "E2E\\step-definitions\\accountSummary.step.ts:6"
             },
             "result": {
               "status": "passed",
-              "duration": 33165399
+              "duration": 33968199
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 13,
+            "line": 12,
             "name": "all naviagtion links should be working on account summary page",
             "match": {
               "location": "E2E\\step-definitions\\accountSummary.step.ts:23"
             },
             "result": {
               "status": "passed",
-              "duration": 11725306899
+              "duration": 11109553399
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 14,
+            "line": 13,
             "name": "the account summary should have Investment Accounts with one brokerage account",
             "match": {
               "location": "E2E\\step-definitions\\accountSummary.step.ts:34"
             },
             "result": {
               "status": "passed",
-              "duration": 487199
+              "duration": 202499
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 15,
+            "line": 14,
             "name": "the account summary should have Credit Accounts with credit card account",
             "match": {
               "location": "E2E\\step-definitions\\accountSummary.step.ts:39"
             },
             "result": {
               "status": "passed",
-              "duration": 274199
+              "duration": 133999
             }
           },
           {
@@ -321,16 +221,11 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 15789099
+              "duration": 13338000
             }
           }
         ],
-        "tags": [
-          {
-            "name": "@ui",
-            "line": 6
-          }
-        ],
+        "tags": [],
         "type": "scenario"
       }
     ],
@@ -339,6 +234,6 @@
     "keyword": "Feature",
     "name": "Login and Account Summary Verification",
     "tags": [],
-    "uri": "E2E\\features\\ui\\login.feature"
+    "uri": "E2E\\features\\login.feature"
   }
 ]

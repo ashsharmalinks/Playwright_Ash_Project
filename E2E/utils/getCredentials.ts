@@ -8,7 +8,7 @@ export function getCredentials() {
     const password = process.env.LOGIN_PASSWORD;
 
     if (!username || !password) {
-      throw new Error('Missing LOGIN_EMAIL or LOGIN_PASSWORD in CI environment variables.');
+      throw new Error('Missing LOGIN_USERNAME or LOGIN_PASSWORD in CI environment variables.');
     }
 
     return { username, password };

@@ -3,6 +3,7 @@ Feature: Login and Account Summary Verification
   I want to verify the login functionality and account summary
   So that I can access my account and perform transactions
 
+  @ui
   Scenario: Successful login and account summary verification
     Given I open the login page
     And I have clicked the sign-in button
