@@ -277,3 +277,18 @@ export class LoginPage extends AbstractPage {
 ✅ Improves code reuse
 ✅ Standardized logging
 ✅ Cleaner, more maintainable tests
+✅ Better error handling
+
+### 🧪 Run Tests and Generate HTML Report
+
+To execute your Playwright + Cucumber tests and automatically generate and open the HTML report, use the following command:
+
+```bash
+npm run report:open:html
+```
+
+This command will:
+
+1. Run the tests and generate a JSON report
+2. Generate the HTML report using the JSON data
+3. Open the final report in your default browser at `reports/cucumber-report.html`
