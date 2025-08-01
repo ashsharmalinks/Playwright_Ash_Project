@@ -1,12 +1,13 @@
 module.exports = {
   default: {
+    requireModule: ['ts-node/register'],
     require: [
       'E2E/step-definitions/**/*.ts',
       'E2E/support/**/*.ts'
     ],
-    requireModule: ['ts-node/register'],
-    format: ['json:reports/cucumber-report.json'],
-    paths: ['E2E/features/**/*.feature'],
-    publishQuiet: true
-  }
+    format: [
+      'json:reports/cucumber-report.json',
+      '@cucumber/pretty-formatter'
+    ],
+    paths: ['E2E/features/**/*.feature']  }
 };

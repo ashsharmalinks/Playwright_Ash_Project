@@ -1,3 +1,4 @@
+// E2E/support/hooks.ts
 import {
   BeforeAll,
   AfterAll,
@@ -6,78 +7,76 @@ import {
   setDefaultTimeout,
   Status,
 } from '@cucumber/cucumber';
+
 import { chromium, Browser } from 'playwright';
 import fs from 'fs';
 import path from 'path';
 import { logger } from '../utils/logger';
+import { CustomWorld } from './custom-world';
 
-let browser: Browser;
+setDefaultTimeout(60 * 1000); // 60s per step timeout
 
-setDefaultTimeout(60 * 1000); // 60 seconds timeout per step
-
-BeforeAll(async function () {
-  const headlessMode = process.env.PLAYWRIGHT_HEADLESS !== 'false';
-
-  logger.info(`🚀 Launching browser in ${headlessMode ? 'headless' : 'headful'} mode`);
-  browser = await chromium.launch({
-    headless: headlessMode,
-    slowMo: 100,
-  });
-
-  // Ensure output folders exist
+BeforeAll(() => {
+  // Ensure output folders exist before test run
   fs.mkdirSync('test-results/screenshots', { recursive: true });
   fs.mkdirSync('test-results/traces', { recursive: true });
 });
 
-AfterAll(async function () {
-  if (browser) {
-    logger.info('👋 Closing browser.');
-    await browser.close();
-  }
+AfterAll(() => {
+  logger.info('✅ Test execution complete.');
 });
 
-Before(async function (scenario) {
+Before(async function (this: CustomWorld, scenario) {
   const isUI = scenario.pickle.tags.some(tag => tag.name === '@ui');
 
   if (isUI) {
-    this.context = await browser.newContext({ ignoreHTTPSErrors: true });
-    this.page = await this.context.newPage();
+    logger.info(`[Worker-${process.pid}] 🚀 Launching browser for: "${scenario.pickle.name}"`);
 
-    logger.info('✨ New browser context and page created.');
+    this.browser = await chromium.launch({
+      headless: process.env.PLAYWRIGHT_HEADLESS !== 'false',
+      slowMo: 100,
+    });
+
+    this.context = await this.browser.newContext({ ignoreHTTPSErrors: true });
+    this.page = await this.context.newPage();
 
     await this.context.tracing.start({
       screenshots: true,
       snapshots: true,
     });
+
+    logger.info(`[Worker-${process.pid}] ✨ Browser context ready`);
   }
 });
 
-After(async function (scenario) {
-  const isUI = scenario.pickle.tags.some(tag => tag.name === '@ui');
-
+After(async function (this: CustomWorld, scenario) {
+  const isUI = this.browser && this.context && this.page;
   const name = scenario.pickle.name.replace(/[^a-z0-9]+/gi, '_').toLowerCase();
   const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+
   const screenshotPath = `test-results/screenshots/${name}-${timestamp}.png`;
   const tracePath = `test-results/traces/${name}-${timestamp}.zip`;
 
   try {
-    if (isUI && scenario.result?.status === Status.FAILED && this.page) {
-      logger.error(`❌ Scenario Failed: ${scenario.pickle.name}`);
+    if (isUI && scenario.result?.status === Status.FAILED) {
+      logger.error(`❌ Scenario Failed: "${scenario.pickle.name}"`);
       const screenshot = await this.page.screenshot({ path: screenshotPath, fullPage: true });
       await this.attach(screenshot, 'image/png');
       logger.error(`📸 Screenshot saved: ${screenshotPath}`);
+    }
+
+    if (isUI) {
       await this.context.tracing.stop({ path: tracePath });
-      logger.error(`📦 Trace saved: ${tracePath}`);
-    } else if (isUI) {
-      await this.context.tracing.stop();
+      logger.info(`📦 Trace saved: ${tracePath}`);
     }
   } catch (err: any) {
-    logger.error(`🔥 After hook error: ${err.message}`);
+    logger.error(`🔥 After hook error in scenario "${scenario.pickle.name}": ${err.message}`);
   } finally {
     if (isUI) {
       await this.page?.close();
       await this.context?.close();
-      logger.info('🧹 Browser context closed.');
+      await this.browser?.close();
+      logger.info(`🧹 Cleaned up browser context for: "${scenario.pickle.name}"`);
     }
   }
 });

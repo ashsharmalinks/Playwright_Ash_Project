@@ -14,60 +14,46 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 591300
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "Given ",
-            "line": 5,
-            "name": "the Reqres API is available",
-            "match": {
-              "location": "E2E\\step-definitions\\get-users.steps.ts:7"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 5632099
+              "duration": 706299
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 6,
-            "name": "I send a GET request to \"api/users?page=10\"",
+            "line": 5,
+            "name": "I request the list of users",
             "match": {
-              "location": "E2E\\step-definitions\\get-users.steps.ts:13"
+              "location": "E2E\\step-definitions\\get-users.steps.ts:7"
             },
             "result": {
               "status": "passed",
-              "duration": 171269699
+              "duration": 151739300
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 7,
+            "line": 6,
             "name": "the response status should be 200",
             "match": {
-              "location": "E2E\\step-definitions\\get-users.steps.ts:17"
+              "location": "E2E\\step-definitions\\get-users.steps.ts:11"
             },
             "result": {
-              "status": "failed",
-              "duration": 5966400,
-              "error_message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m401\u001b[39m\n    at Proxy.<anonymous> (C:\\Users\\asusv\\OneDrive\\Desktop\\Playwright_Ash_Project\\node_modules\\playwright\\lib\\matchers\\expect.js:221:24)\n    at CustomWorld.<anonymous> (C:\\Users\\asusv\\OneDrive\\Desktop\\Playwright_Ash_Project\\E2E\\step-definitions\\get-users.steps.ts:18:29)"
+              "status": "passed",
+              "duration": 1416099
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 8,
+            "line": 7,
             "name": "the response should contain a list of users",
             "match": {
-              "location": "E2E\\step-definitions\\get-users.steps.ts:21"
+              "location": "E2E\\step-definitions\\get-users.steps.ts:15"
             },
             "result": {
-              "status": "skipped",
-              "duration": 0
+              "status": "passed",
+              "duration": 2394500
             }
           },
           {
@@ -75,7 +61,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1390699
+              "duration": 1326500
             }
           }
         ],
@@ -110,7 +96,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 86745199
+              "duration": 4079247300
             }
           },
           {
@@ -123,7 +109,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 968622200
+              "duration": 962875099
             }
           },
           {
@@ -136,7 +122,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5609018900
+              "duration": 5542114900
             }
           },
           {
@@ -149,7 +135,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 879816899
+              "duration": 873454600
             }
           },
           {
@@ -162,7 +148,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 40008199
+              "duration": 37463599
             }
           },
           {
@@ -170,7 +156,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 14882700
+              "duration": 15924499
             }
           }
         ],
@@ -209,7 +195,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 69734899
+              "duration": 1675091200
             }
           },
           {
@@ -222,7 +208,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1032248400
+              "duration": 919869699
             }
           },
           {
@@ -235,7 +221,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 251555000
+              "duration": 262954300
             }
           },
           {
@@ -248,7 +234,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1246400899
+              "duration": 4034729699
             }
           },
           {
@@ -261,7 +247,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2635999
+              "duration": 2124899
             }
           },
           {
@@ -274,7 +260,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 33165399
+              "duration": 39823300
             }
           },
           {
@@ -287,7 +273,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 11725306899
+              "duration": 13946954199
             }
           },
           {
@@ -300,7 +286,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 487199
+              "duration": 216599
             }
           },
           {
@@ -313,7 +299,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 274199
+              "duration": 134900
             }
           },
           {
@@ -321,7 +307,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 15789099
+              "duration": 14156299
             }
           }
         ],
